@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo2u4a62eqlfh"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ydwmm"]
+[ext_resource type="Texture2D" uid="uid://beaimt8fjnn3j" path="res://assets/HUD/StartGame.PNG" id="2_wo08k"]
+[ext_resource type="Texture2D" uid="uid://br3gixrd55dns" path="res://assets/HUD/Options.PNG" id="3_txyr1"]
+[ext_resource type="Texture2D" uid="uid://ylw1h4ioiday" path="res://assets/HUD/Exit.PNG" id="4_vu0cm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cew7e"]
+atlas = ExtResource("2_wo08k")
+region = Rect2(330.325, 591.334, 335.838, 93.9144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bywl"]
+atlas = ExtResource("3_txyr1")
+region = Rect2(329.525, 716.99, 336.07, 97.1237)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebhow"]
+atlas = ExtResource("4_vu0cm")
+region = Rect2(332.991, 848.125, 328.823, 94.4056)
+
+[node name="MainMenu" type="MarginContainer"]
+offset_left = 220.0
+offset_top = 4.0
+offset_right = 1244.0
+offset_bottom = 1036.0
+script = ExtResource("1_ydwmm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_cew7e")
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_5bywl")
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = SubResource("AtlasTexture_ebhow")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
