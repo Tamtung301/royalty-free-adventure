@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://m64we7o4ihv7"]
+[gd_scene load_steps=4 format=3 uid="uid://m64we7o4ihv7"]
 
 [ext_resource type="PackedScene" uid="uid://ccq3dbnk4r8ex" path="res://scenes/player.tscn" id="1_38ufv"]
+[ext_resource type="PackedScene" uid="uid://c14tuw05ead0c" path="res://scenes/first_world/first_world-tilemaplayer.tscn" id="2_e6r7n"]
+[ext_resource type="PackedScene" uid="uid://c1b7r6sooy74h" path="res://scenes/enemy.tscn" id="3_vnd2s"]
 
 [node name="First World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_38ufv")]
-position = Vector2(0, 1)
+position = Vector2(-202, -112)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_e6r7n")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_vnd2s")]
+position = Vector2(1371, -142)
